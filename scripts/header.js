@@ -41,7 +41,7 @@ window.addEventListener('click', (event) => {
 });
 
 
-
+/*
 // Function that takes in json data from line 11
 function displayMovie(movies) {
 
@@ -56,5 +56,35 @@ function displayMovie(movies) {
 
     searchList.appendChild(movieItem)
   }
-  // loadMovieDetails();
+//loadMovieDetails();
+}
+*/
+
+//function which renders the searchlist:
+function dropDown (movies) {
+  //movies is an object of objects
+    for (let i = 0; i < movies.length; i++) {
+      /*movieRow, parent element, is a row of the searchlist, 
+      containing some details about each film*/
+      let movieRow = document.createElement('div').classList.add('movie-row');
+      //children:
+      let movieThumbnail = document.createElement('img').classList.add('searchlist-movie-thumbnail');
+     // movieThumbnail.setAttribute('src', movie[i].Poster);
+     // movieThumbnail.setAttribute('alt', `Poster for ${movie[i].Title}`);
+
+      let movieName = document.createElement('h4').classList.add('searchlist-movie-titles');
+      let movieRating = document.createElement('p').classList.add('searchlist-movie-rating');
+      let movieYear = document.createElement('p').classList.add('searchlist-movie-year');
+
+      movieName.textContent = movies[i].Title;
+      movieRating.textContent = movies[i].Rating;
+      movieYear.textContent = movies[i].Year;
+      
+      movieRow.append(movieThumbnail, movieName, movieRating, movieYear);
+      searchList.appendChild(movieItem)
+    }
+    
+
+
+
 }
