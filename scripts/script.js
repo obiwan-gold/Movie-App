@@ -1,15 +1,19 @@
 fetch('http://www.omdbapi.com/?i=tt0076759&plot=full')
   .then(response => {
+=======
+fetch ('http://www.omdbapi.com/?i=tt0076759&plot=full')
+.then(response => {
     return response.json();
   })
 
   .then(data => {
 
+<<<<<<< HEAD
     console.log(data)
   })
 function createMovieCard(movieObject) {
 
-  //parent Section: 
+  //parent Section:
   const newMovieCard = document.createElement('Section').classList.add('movie-cards')
   //child: movie title:
   const movieTitle = document.createElement('h2').classList.add('movie-titles');
