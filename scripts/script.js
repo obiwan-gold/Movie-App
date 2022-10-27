@@ -1,4 +1,7 @@
-fetch('http://www.omdbapi.com/?i=tt0076759&plot=full')
+
+// 
+
+fetch(`http://www.omdbapi.com/?s=${searchID}&apikey=f0951f4b`)
   .then(response => {
     return response.json();
   })
@@ -7,6 +10,9 @@ fetch('http://www.omdbapi.com/?i=tt0076759&plot=full')
 
     console.log(data)
   })
+
+
+// 
 
 function createMovieCard(movieObject) {
 
