@@ -22,6 +22,7 @@ async function searchBar(searchInput) {
     const response = await fetch(`${URL}`);
     const data = await response.json();
     // Unsure what data.Response is doing here
+    console.log(data.Search)
     if (data.Response === "True") {
       displayMovie(data.Search);
     }
