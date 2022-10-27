@@ -1,33 +1,48 @@
-const searchBar = document.getElementById('search-bar')
+// Input Field
+const searchField = document.getElementById('search-bar')
+// Drop Down List
 const searchList = document.getElementById('search-list');
 
-// Load movies from API
-async function searchBar(searchResult) {
-  // searchID is typed in parameters
-  const URL = `http://www.omdbapi.com/?s=${searchResult}&page=1&apikey=f0951f4b`;
-  const res = await fetch(`${URL}`);
-  const data = await res.json();
-  console.log(data.Search);
-  if (data.Response == "True") displayMovie(data.Search);
-}
-
+// Function called on key & click
 function findMovies() {
-  let searchResult = (movieSearchBox.value).trim();
-  if (searchTerm.length > 0) {
+  let searchInput = (searchField.value).trim();
+  if (searchInput.length > 0) {
     searchList.classList.remove('hide-search-list');
-    loadMovies(searchTerm);
+    searchBar(searchInput);
   } else {
     searchList.classList.add('hide-search-list');
   }
 }
 
+// Load movies from API
+async function searchBar(searchInput) {
+  // searchTerm is typed in parameters
+  const URL = `https://omdbapi.com/?s=${searchInput}&page=1&apikey=fc1fef96`;
+  const res = await fetch(`${URL}`);
+  const data = await res.json();
+  console.log(data.Search);
+  // if (data.Response == "True") displayMovie(data.Search);
+}
+
+
 // Event listener for onclick & onkeyup
 
-// window.addEventListener('click', (event) => {
-//   if (event.target.className != "search-bar-visibility") {
-//     searchList.classList.add('hide-search-list');
-//   }
-// });
+window.addEventListener('click', (event) => {
+  if (event.target.className != "search-bar-visibility") {
+    searchList.classList.add('hide-search-list');
+  }
+});
 
 
 
+// Function that takes in json data from line 11
+function displayMovie(movies) {
+  searchList.innerHTML = "";
+  for (let i = 0; i < movies.length; i++) {
+    let searchListItem = document.createElement('div');
+    searchListItem.dataset.id = movies[i].imdbID; // setting movie id in  data-id
+    searchListItem.classList.add('search-list-item');
+
+  }
+  loadMovieDetails();
+}
