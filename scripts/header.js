@@ -18,15 +18,18 @@ function findMovies() {
 async function searchBar(searchInput) {
   // searchTerm is typed in parameters
   const URL = `https://omdbapi.com/?s=${searchInput}&page=1&apikey=fc1fef96`;
-  const res = await fetch(`${URL}`);
-  const data = await res.json();
-  if (data.Response == "True") {
-    displayMovie(data.Search);
-  }
-  else {
-    return false;
+  try {
+    const response = await fetch(`${URL}`);
+    const data = await response.json();
+    // Unsure what data.Response is doing here
+    if (data.Response === "True") {
+      displayMovie(data.Search);
+    }
+  } catch (error) {
+    console.log(error)
   }
 }
+
 
 // Event listener for onclick & onkeyup
 
@@ -52,5 +55,5 @@ function displayMovie(movies) {
 
     searchList.appendChild(movieItem)
   }
-  loadMovieDetails();
+  // loadMovieDetails();
 }
