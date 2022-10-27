@@ -1,16 +1,16 @@
 
 // 
+function searchBar(searchID) {
+  fetch(`http://www.omdbapi.com/?s=${searchID}&apikey=f0951f4b`)
+    .then(response => {
+      return response.json();
+    })
 
-fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=f0951f4b`)
-  .then(response => {
-    return response.json();
-  })
+    .then(data => {
 
-  .then(data => {
-
-    console.log(data)
-  })
-
+      console.log(data)
+    })
+}
 
 // 
 
