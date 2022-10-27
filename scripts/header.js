@@ -1,3 +1,5 @@
+const searchBar = document.getElementById('search-bar')
+const searchList = document.getElementById('search-list');
 
 // Load movies from API
 async function searchBar(searchResult) {

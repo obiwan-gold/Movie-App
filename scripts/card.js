@@ -1,5 +1,3 @@
-const searchBar = document.getElementById('search-bar')
-const searchList = document.getElementById('search-list');
 
 function createMovieCard(movieObject) {
 
