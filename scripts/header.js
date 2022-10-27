@@ -29,27 +29,42 @@ async function searchBar(searchInput) {
 //function which renders the searchlist:
 function dropDown(movies) {
   //movies is an object of objects
+
+  searchList.innerHTML ="";
   for (let i = 0; i < movies.length; i++) {
-    /*movieRow, parent element, is a row of the searchlist, 
-    containing some details about each film*/
+    //movieRow, parent element, is a row of the searchlist, 
+    //containing some details about each film
     let movieRow = document.createElement('div')
+
     movieRow.dataset.id = movies[i].imdbID
+    //
     movieRow.classList.add('movie-row');
 
+    // if (movies[i].Poster != "N/A"){
+    //   let moviePoster = movies[i].Poster;
+      
+    // } else {
+    //   let moviePoster = 'No image available.';
+    // }
 
-    let movieThumbnail = document.createElement('img').classList.add('searchlist-movie-thumbnail');
-    // movieThumbnail.setAttribute('src', movie[i].Poster);
-    // movieThumbnail.setAttribute('alt', `Poster for ${movie[i].Title}`);
+    let movieThumbnail = document.createElement('img');
+    movieThumbnail.src = movies[i].Poster;
+    movieThumbnail.alt = `Poster for ${movies[i].Title}`
 
-    let movieName = document.createElement('h4').classList.add('searchlist-movie-titles');
-    let movieRating = document.createElement('p').classList.add('searchlist-movie-rating');
-    let movieYear = document.createElement('p').classList.add('searchlist-movie-year');
+    
 
-    // movieName.textContent = movies[i].Title;
-    // movieRating.textContent = movies[i].Rating;
-    // movieYear.textContent = movies[i].Year;
 
-    // movieRow.append(movieThumbnail, movieName, movieRating, movieYear);
+    let movieName = document.createElement('h4');
+    let movieRating = document.createElement('p');
+    let movieYear = document.createElement('p');
+
+
+    movieName.innerText = movies[i].Title;
+    movieRating.innerText = movies[i].Rating;
+    movieYear.innerText = movies[i].Year;
+
+    movieRow.append(movieThumbnail, movieName, movieRating, movieYear);
+    
     searchList.appendChild(movieRow)
   }
 }
