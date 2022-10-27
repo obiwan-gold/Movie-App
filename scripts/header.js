@@ -20,10 +20,13 @@ async function searchBar(searchInput) {
   const URL = `https://omdbapi.com/?s=${searchInput}&page=1&apikey=fc1fef96`;
   const res = await fetch(`${URL}`);
   const data = await res.json();
-  console.log(data.Search);
-  // if (data.Response == "True") displayMovie(data.Search);
+  if (data.Response == "True") {
+    displayMovie(data.Search);
+  }
+  else {
+    return false;
+  }
 }
-
 
 // Event listener for onclick & onkeyup
 
@@ -44,8 +47,8 @@ function displayMovie(movies) {
     // Creating a row that contains movie item title and image
     let movieItem = document.createElement('div');
 
-    movieItem.dataset.id = movies[i].imdbID; // setting movie id in  data-id
-    movieListItem.classList.add('search-list-item');
+    movieItem.dataset.id = movies[i].imdbID; // 
+    movieItem.classList.add('search-list-item');
 
     searchList.appendChild(movieItem)
   }
