@@ -18,11 +18,4 @@ window.onload = () => {
   }
 }
 
-// If the user clicks off the search bar, the search bar disappears.
-window.addEventListener('click', (event) => {
-  if (event.target.className != "search-bar-visibility") {
-    searchList.classList.add('hide-search-list');
-  }
-});
-
 
