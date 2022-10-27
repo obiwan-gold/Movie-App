@@ -1,7 +1,7 @@
 
 // 
 
-fetch(`http://www.omdbapi.com/?s=${searchID}&apikey=f0951f4b`)
+fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=f0951f4b`)
   .then(response => {
     return response.json();
   })
