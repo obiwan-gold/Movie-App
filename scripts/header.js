@@ -37,12 +37,17 @@ window.addEventListener('click', (event) => {
 
 // Function that takes in json data from line 11
 function displayMovie(movies) {
-  searchList.innerHTML = "";
-  for (let i = 0; i < movies.length; i++) {
-    let searchListItem = document.createElement('div');
-    searchListItem.dataset.id = movies[i].imdbID; // setting movie id in  data-id
-    searchListItem.classList.add('search-list-item');
 
+  searchList.innerHTML = "";
+
+  for (let i = 0; i < movies.length; i++) {
+    // Creating a row that contains movie item title and image
+    let movieItem = document.createElement('div');
+
+    movieItem.dataset.id = movies[i].imdbID; // setting movie id in  data-id
+    movieListItem.classList.add('search-list-item');
+
+    searchList.appendChild(movieItem)
   }
   loadMovieDetails();
 }
