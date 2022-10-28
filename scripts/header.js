@@ -30,7 +30,7 @@ async function searchBar(searchInput) {
 function dropDown(movies) {
   //movies is an object of objects
 
-  searchList.innerHTML ="";
+  searchList.innerHTML = "";
   for (let i = 0; i < movies.length; i++) {
     //movieRow, parent element, is a row of the searchlist, 
     //containing some details about each film
@@ -42,7 +42,7 @@ function dropDown(movies) {
 
     // if (movies[i].Poster != "N/A"){
     //   let moviePoster = movies[i].Poster;
-      
+
     // } else {
     //   let moviePoster = 'No image available.';
     // }
@@ -51,7 +51,7 @@ function dropDown(movies) {
     movieThumbnail.src = movies[i].Poster;
     movieThumbnail.alt = `Poster for ${movies[i].Title}`
 
-    
+
 
 
     let movieName = document.createElement('h4');
@@ -64,7 +64,7 @@ function dropDown(movies) {
     movieYear.innerText = movies[i].Year;
 
     movieRow.append(movieThumbnail, movieName, movieRating, movieYear);
-    
+
     searchList.appendChild(movieRow)
   }
 }
@@ -74,7 +74,7 @@ function dropDown(movies) {
 // Event listener for onclick & onkeyup
 
 window.addEventListener('click', (event) => {
-  if (event.target.className != "search-bar-visibility") {
+  if (event.target.className != "hide") {
     searchList.classList.add('hide-search-list');
   }
 });
