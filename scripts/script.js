@@ -59,6 +59,7 @@ function dropDown(movies) {
     thumbnailContainer.append(movieThumbnail);
 
     let rowInfoContainer = document.createElement('div');
+    rowInfoContainer.classList = 'rowinfo-container'
 
     let movieName = document.createElement('h4');
     let movieYear = document.createElement('p');
