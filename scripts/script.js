@@ -20,7 +20,7 @@ function findMovies() {
 // Load movies from API
 async function searchBar(searchInput) {
   // searchTerm is typed in parameters
-  const URL = `https://omdbapi.com/?s=${searchInput}&page=1&apikey=fc1fef96`;
+  const URL = `http://www.omdbapi.com/?s=${searchInput}&apikey=f0951f4b`;
   const response = await fetch(`${URL}`);
   const data = await response.json();
   // Unsure what data.Response is doing here
