@@ -65,7 +65,7 @@ function dropDown(movies) {
     movieName.innerText = movies[i].Title;
     movieYear.innerText = movies[i].Year;
 
-    rowInfoContainer.append(movieNam, movieYear)
+    rowInfoContainer.append(movieName, movieYear)
 
     movieRow.append(thumbnailContainer, rowInfoContainer);
     searchList.appendChild(movieRow)
