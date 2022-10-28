@@ -3,6 +3,7 @@ const searchField = document.getElementById('search-bar')
 // Drop Down List
 const searchList = document.getElementById('search-list');
 // section in main which will be the movie card
+const card = document.getElementById('movie-card');
 
 
 // Function called on key & click
@@ -80,6 +81,7 @@ function loadMovieDetails(){
           // console.log(movie.dataset.id);
           searchList.classList.add('hide-search-list');
           searchField.value = "";
+          card.innerText="";
           const result = await fetch(`http://www.omdbapi.com/?i=${movie.dataset.id}&apikey=fc1fef96`);
           const movieDetails = await result.json();
           // console.log(movieDetails);
