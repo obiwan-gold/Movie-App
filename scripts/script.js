@@ -97,6 +97,7 @@ function loadMovieDetails() {
 function displayMovieDetails(movieDetails) {
 
   let imageContainer = document.createElement('div');
+  imageContainer.classList = 'image-container';
   let moviePoster = document.createElement('img');
 
   if (movieDetails.Poster != 'N/A') {
@@ -110,6 +111,7 @@ function displayMovieDetails(movieDetails) {
   imageContainer.appendChild(moviePoster);
 
   const infoContainer = document.createElement('div')
+  infoContainer.classList = 'info-container';
 
   const movieTitle = document.createElement('h3');
   movieTitle.setAttribute('id', 'main-movie-title');
