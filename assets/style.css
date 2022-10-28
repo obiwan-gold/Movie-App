@@ -3,8 +3,8 @@ body {
   padding: 0;
   margin: 0;
   height: 100%;
-  /* background-color: black; */
-  color: black;
+  background-color: black;
+  color: white;
 }
 
 header {
@@ -37,12 +37,12 @@ h1 {
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(125, 123, 123, 0.913);
   padding: 1rem 0.8rem;
-  font-style:'Star Jedi', arial;
+  font-style: 'Star Jedi', arial;
 }
 
 #search-bar:focus {
   outline: rgba(125, 123, 123, 0.913);
-  box-shadow: 10px 10px 5px 12px rgb(181, 181, 181);
+  /* box-shadow: 10px 10px 5px 12px rgb(181, 181, 181); */
 
 }
 
@@ -64,6 +64,10 @@ h1 {
 
 .search-list .movie-row {
   height: 200px;
+}
+
+.movie-row {
+  display: flex;
 }
 
 .movie-row img {

@@ -49,7 +49,8 @@ function dropDown(movies) {
     //   let moviePoster = 'No image available.';
     // }
 
-    let thumbnailContainer = document.createElement('div').classList.add('thumbnail-container');
+    let thumbnailContainer = document.createElement('div')
+    thumbnailContainer.classList = 'thumbnail-container';
 
     let movieThumbnail = document.createElement('img');
     movieThumbnail.src = movies[i].Poster;
@@ -57,7 +58,7 @@ function dropDown(movies) {
 
     thumbnailContainer.append(movieThumbnail);
 
-    let rowInfoContainer = document.createElement('div').classList.add('row-info-container');
+    let rowInfoContainer = document.createElement('div');
 
     let movieName = document.createElement('h4');
     let movieYear = document.createElement('p');
@@ -92,14 +93,14 @@ function loadMovieDetails() {
 }
 
 
-function displayMovieDetails(movieDetails){
-  
-  let imageContainer = document.createElement('div').classList.add('image-container');
+function displayMovieDetails(movieDetails) {
+
+  let imageContainer = document.createElement('div');
   let moviePoster = document.createElement('img');
 
-  if (movieDetails.Poster !='N/A'){
+  if (movieDetails.Poster != 'N/A') {
 
-    moviePoster.setAttribute('id','main-movie-poster');
+    moviePoster.setAttribute('id', 'main-movie-poster');
     moviePoster.src = movieDetails.Poster;
     moviePoster.alt = "Movie Poster";
 
@@ -107,39 +108,39 @@ function displayMovieDetails(movieDetails){
 
   imageContainer.appendChild(moviePoster);
 
-  const infoContainer = document.createElement('div').classList.add('info-container');
+  const infoContainer = document.createElement('div')
 
   const movieTitle = document.createElement('h3');
-  movieTitle.setAttribute('id','main-movie-title');
-  movieTitle.innerText=movieDetails.Title;
-  
+  movieTitle.setAttribute('id', 'main-movie-title');
+  movieTitle.innerText = movieDetails.Title;
+
   const movieYear = document.createElement('p');
-  movieYear.setAttribute('id','main-movie-year');
-  movieYear.innerText=movieDetails.Year;
+  movieYear.setAttribute('id', 'main-movie-year');
+  movieYear.innerText = movieDetails.Year;
 
   const movieGenre = document.createElement('p');
-  movieGenre.setAttribute('id','main-movie-genre');
-  movieGenre.innerText=movieDetails.Genre;
+  movieGenre.setAttribute('id', 'main-movie-genre');
+  movieGenre.innerText = movieDetails.Genre;
 
   const movieActors = document.createElement('p');
-  movieActors.setAttribute('id','main-movie-actors');
-  movieActors.innerText=`Starring: ${movieDetails.Actors}`;
+  movieActors.setAttribute('id', 'main-movie-actors');
+  movieActors.innerText = `Starring: ${movieDetails.Actors}`;
 
   const movieWriter = document.createElement('p');
-  movieWriter.setAttribute('id','main-movie-writer');
-  movieWriter.innerText=`Written By: ${movieDetails.Writer}`;
+  movieWriter.setAttribute('id', 'main-movie-writer');
+  movieWriter.innerText = `Written By: ${movieDetails.Writer}`;
 
   const moviePlot = document.createElement('p');
   moviePlot.setAttribute('id', 'main-movie-plot');
   moviePlot.innerText = movieDetails.Plot;
 
   const movieLanguage = document.createElement('p');
-  movieLanguage.setAttribute('id','main-movie-language');
-  movieLanguage.innerText=movieDetails.Language;
+  movieLanguage.setAttribute('id', 'main-movie-language');
+  movieLanguage.innerText = movieDetails.Language;
 
   const movieAwards = document.createElement('p');
-  movieAwards.setAttribute('id','main-movie-awards');
-  movieAwards.innerText=movieDetails.Awards;
+  movieAwards.setAttribute('id', 'main-movie-awards');
+  movieAwards.innerText = movieDetails.Awards;
 
   infoContainer.append(movieTitle, movieYear, movieGenre, movieActors, movieWriter, moviePlot, movieLanguage, movieAwards);
   card.append(imageContainer, infoContainer);
