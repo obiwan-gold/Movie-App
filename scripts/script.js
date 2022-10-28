@@ -49,24 +49,25 @@ function dropDown(movies) {
     //   let moviePoster = 'No image available.';
     // }
 
+    let thumbnailContainer = document.createElement('div').classList.add('thumbnail-container');
+
     let movieThumbnail = document.createElement('img');
     movieThumbnail.src = movies[i].Poster;
     movieThumbnail.alt = `Poster for ${movies[i].Title}`
 
+    thumbnailContainer.append(movieThumbnail);
 
-
+    let rowInfoContainer = document.createElement('div').classList.add('row-info-container');
 
     let movieName = document.createElement('h4');
-    let movieRating = document.createElement('p');
     let movieYear = document.createElement('p');
 
-
     movieName.innerText = movies[i].Title;
-    console.log(movies[i].rated)
-    movieRating.innerText = movies[i].Rated;
     movieYear.innerText = movies[i].Year;
 
-    movieRow.append(movieThumbnail, movieName, movieRating, movieYear);
+    rowInfoContainer.append(movieNam, movieYear)
+
+    movieRow.append(thumbnailContainer, rowInfoContainer);
     searchList.appendChild(movieRow)
   }
 
@@ -91,49 +92,57 @@ function loadMovieDetails() {
 }
 
 
-function displayMovieDetails(movieDetails) {
+function displayMovieDetails(movieDetails){
+  
+  let imageContainer = document.createElement('div').classList.add('image-container');
+  let moviePoster = document.createElement('img');
 
+  if (movieDetails.Poster !='N/A'){
 
-  if (movieDetails.Poster != 'N/A') {
-    let moviePoster = document.createElement('img');
+    moviePoster.setAttribute('id','main-movie-poster');
     moviePoster.src = movieDetails.Poster;
-    moviePoster.alt = "Movie Poster"
-    card.append(moviePoster)
+    moviePoster.alt = "Movie Poster";
+
   }
 
+  imageContainer.appendChild(moviePoster);
+
+  const infoContainer = document.createElement('div').classList.add('info-container');
+
   const movieTitle = document.createElement('h3');
-  movieTitle.setAttribute('id', 'main-movie-title');
-  movieTitle.innerText = movieDetails.Title;
+  movieTitle.setAttribute('id','main-movie-title');
+  movieTitle.innerText=movieDetails.Title;
+  
+  const movieYear = document.createElement('p');
+  movieYear.setAttribute('id','main-movie-year');
+  movieYear.innerText=movieDetails.Year;
 
-  const movieYear = document.createElement('span');
-  movieYear.setAttribute('id', 'main-movie-year');
-  movieYear.innerText = movieDetails.Year;
+  const movieGenre = document.createElement('p');
+  movieGenre.setAttribute('id','main-movie-genre');
+  movieGenre.innerText=movieDetails.Genre;
 
-  const movieGenre = document.createElement('span');
-  movieGenre.setAttribute('id', 'main-movie-genre');
-  movieGenre.innerText = movieDetails.Genre;
+  const movieActors = document.createElement('p');
+  movieActors.setAttribute('id','main-movie-actors');
+  movieActors.innerText=`Starring: ${movieDetails.Actors}`;
 
-  const movieActors = document.createElement('span');
-  movieActors.setAttribute('id', 'main-movie-actors');
-  movieActors.innerText = `Starring: ${movieDetails.Actors}`;
-
-  const movieWriter = document.createElement('span');
-  movieWriter.setAttribute('id', 'main-movie-writer');
-  movieWriter.innerText = `Written By: ${movieDetails.Writer}`;
+  const movieWriter = document.createElement('p');
+  movieWriter.setAttribute('id','main-movie-writer');
+  movieWriter.innerText=`Written By: ${movieDetails.Writer}`;
 
   const moviePlot = document.createElement('p');
   moviePlot.setAttribute('id', 'main-movie-plot');
   moviePlot.innerText = movieDetails.Plot;
 
-  const movieLanguage = document.createElement('span');
-  movieLanguage.setAttribute('id', 'main-movie-language');
-  movieLanguage.innerText = movieDetails.Language;
+  const movieLanguage = document.createElement('p');
+  movieLanguage.setAttribute('id','main-movie-language');
+  movieLanguage.innerText=movieDetails.Language;
 
-  const movieAwards = document.createElement('span');
-  movieAwards.setAttribute('id', 'main-movie-awards');
-  movieAwards.innerText = movieDetails.Awards;
+  const movieAwards = document.createElement('p');
+  movieAwards.setAttribute('id','main-movie-awards');
+  movieAwards.innerText=movieDetails.Awards;
 
-  card.append(movieTitle, movieYear, movieGenre, movieActors, movieWriter, moviePlot, movieLanguage, movieAwards);
+  infoContainer.append(movieTitle, movieYear, movieGenre, movieActors, movieWriter, moviePlot, movieLanguage, movieAwards);
+  card.append(imageContainer, infoContainer);
 }
 
 
