@@ -4,7 +4,7 @@ body {
   margin: 0;
   height: 100%;
   background-color: black;
-  color: white;
+  color: rgb(255, 220, 23);
   background-image: url("stars_background.webp");
 }
 
@@ -107,14 +107,17 @@ main {
 
 }
 
+
 .info-container {
   width: 60%;
-  border: 1px solid rgba(125, 123, 123, 0.475);
+  border: 1px inset rgba(255, 246, 246, 0.823);
+  font-family: 'Azeret Mono';
+  /* border-radiu */
 
 }
 
 #main-movie-plot {
-  width: 80%
+  width: 100%
 }
 
 /* Media Queries */
@@ -318,9 +321,7 @@ main {
     padding: 40px 5px;
   }
 
-  #movie-card .image-container {
-    max-width: 800px;
-  }
+
 
   #main-movie-title {
     font-size: 35px;
