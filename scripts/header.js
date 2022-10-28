@@ -49,7 +49,7 @@ function dropDown(movies) {
     //   let moviePoster = 'No image available.';
     // }
 
-    let thumbnailContainer = document.createElement('div');
+    let thumbnailContainer = document.createElement('div').classList.add('thumbnail-container');
 
     let movieThumbnail = document.createElement('img');
     movieThumbnail.src = movies[i].Poster;
@@ -57,7 +57,7 @@ function dropDown(movies) {
 
     thumbnailContainer.append(movieThumbnail);
 
-    let rowInfoContainer = document.createElement('div');
+    let rowInfoContainer = document.createElement('div').classList.add('row-info-container');
 
     let movieName = document.createElement('h4');
     let movieYear = document.createElement('p');
@@ -94,7 +94,7 @@ function loadMovieDetails() {
 
 function displayMovieDetails(movieDetails){
   
-  let imageContainer = document.createElement('div');
+  let imageContainer = document.createElement('div').classList.add('image-container');
   let moviePoster = document.createElement('img');
 
   if (movieDetails.Poster !='N/A'){
@@ -107,7 +107,7 @@ function displayMovieDetails(movieDetails){
 
   imageContainer.appendChild(moviePoster);
 
-  const infoContainer = document.createElement('div')
+  const infoContainer = document.createElement('div').classList.add('info-container');
 
   const movieTitle = document.createElement('h3');
   movieTitle.setAttribute('id','main-movie-title');
