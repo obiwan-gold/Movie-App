@@ -37,10 +37,13 @@ h1 {
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(125, 123, 123, 0.913);
   padding: 1rem 0.8rem;
+  font-style:'Star Jedi', arial;
 }
 
 #search-bar:focus {
   outline: rgba(125, 123, 123, 0.913);
+  box-shadow: 10px 10px 5px 12px rgb(181, 181, 181);
+
 }
 
 /* Search Bar dropdown list */
@@ -181,4 +184,9 @@ and Safari */
   background-color: rgb(61, 61, 124);
   border-radius: 15px;
   border: 1px solid rgb(255, 166, 0);
+}
+
+#search-bar::placeholder {
+  font-style: italic;
+
 }
