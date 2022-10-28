@@ -7,6 +7,7 @@ const card = document.getElementById('movie-card')
 
 // Function called on key & click
 function findMovies() {
+  card.innerText = ""
   let searchInput = (searchField.value).trim();
   if (searchInput.length > 0) {
     searchList.classList.remove('hide-search-list');
