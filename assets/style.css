@@ -58,4 +58,13 @@ h1 {
   h1 {
     font-size: 55px;
   }
-}*/
+}
+
+
+.movie-row, .movie-year, .movie-title, .movie-rating{
+
+  background-color: red;
+  width: 10px;
+  height: 20px;
+
+}
