@@ -62,6 +62,7 @@ function dropDown(movies) {
 
 
     movieName.innerText = movies[i].Title;
+    console.log(movies[i].rated)
     movieRating.innerText = movies[i].Rated;
     movieYear.innerText = movies[i].Year;
 
@@ -111,10 +112,6 @@ function displayMovieDetails(movieDetails) {
   const movieGenre = document.createElement('span');
   movieGenre.setAttribute('id', 'main-movie-genre');
   movieGenre.innerText = movieDetails.Genre;
-
-  const movieRating = document.createElement('span');
-  movieRating.setAttribute('id', 'main-movie-rating');
-  movieRating.innerText = movieDetails.Rated;
 
   const movieActors = document.createElement('span');
   movieActors.setAttribute('id', 'main-movie-actors');
