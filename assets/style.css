@@ -177,8 +177,10 @@ main {
     transition: width.35s ease-in-out;
     transition: width .35s ease-in-out;
   }
-  
-  #search-bar[type=text]:focus {
+
+  /* fixed the change*/
+   
+  #search-bar[type=text]:focus { 
     width: 50vw;
   }
 
