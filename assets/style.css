@@ -55,7 +55,9 @@ h1 {
   max-height: 600px;
   width: 100%;
   overflow-y: scroll;
+  overflow-x: hidden;
   z-index: 2;
+
 }
 
 .hide-search-list {
@@ -82,8 +84,6 @@ h1 {
   display: flex;
   flex-direction: column;
   align-self: start;
-  padding-top: 3rem;
-
 }
 
 .rowinfo-container h4 {
@@ -117,6 +117,19 @@ main {
   h1 {
     font-size: 35px;
   }
+
+  .movie-row {
+    padding: 10px 5px;
+    gap: 1.5rem;
+  }
+
+  .thumbnail-container img {
+    max-width: 100px;
+  }
+
+  .rowinfo-container h4 {
+    font-size: 10px;
+  }
 }
 
 @media only screen and (max-width: 480px) and (orientation: portrait) {
@@ -127,6 +140,19 @@ main {
 
   h1 {
     font-size: 24px;
+  }
+
+  .movie-row {
+    padding: 10px 5px;
+    gap: 1.5rem;
+  }
+
+  .thumbnail-container img {
+    max-width: 100px;
+  }
+
+  .rowinfo-container h4 {
+    font-size: 10px;
   }
 }
 
@@ -175,6 +201,9 @@ main {
     font-size: 50px;
   }
 
+  .movie-row {
+    padding: 40px 5px;
+  }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
@@ -188,6 +217,10 @@ main {
 
   h1 {
     font-size: 55px;
+  }
+
+  .movie-row {
+    padding: 40px 5px;
   }
 }
 
@@ -206,6 +239,11 @@ main {
   .thumbnail-container img {
     max-width: 300px;
   }
+
+  .movie-row {
+    padding: 40px 5px;
+  }
+
 
 }
 
