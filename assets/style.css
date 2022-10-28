@@ -37,13 +37,25 @@ h1 {
   }
 
   h1 {
-    font-size: 26px;
+    font-size: 35px;
   }
 }
 
-/* Landscape */
+@media only screen and (max-width: 480px) and (orientation: portrait) {
+
+  header {
+    height: 60vw;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+
+/* Landscape 
 @media only screen and (max-width: 600px) and (orientation: landscape) {
   h1 {
     font-size: 55px;
   }
-}
+}*/
