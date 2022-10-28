@@ -52,7 +52,7 @@ h1 {
   position: absolute;
   right: 0;
   top: 100%;
-  max-height: 500px;
+  max-height: 600px;
   width: 100%;
   overflow-y: scroll;
   z-index: 2;
@@ -68,15 +68,34 @@ h1 {
 
 .movie-row {
   display: flex;
+
 }
 
-.movie-row img {
-  max-width: 300px;
+.thumbnail-container {
+  width: 300px;
+  height: 130px;
+}
+
+.thumbnail-container>img {
   margin: 0 auto;
   border: 4px solid #fff;
   object-fit: contain;
+  object-position: center;
 }
 
+
+
+main {
+  width: 95%;
+  height: 60%;
+  margin: 300px auto;
+}
+
+#movie-card {
+  display: flex;
+  justify-content: space-evenly;
+
+}
 
 
 
